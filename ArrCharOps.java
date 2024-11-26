@@ -121,14 +121,19 @@ public class ArrCharOps {
      *  characters containing the characters "urge".
      */     
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
-        char [] newarr = new char[arr.length];
+         char [] newarr = new char[arr.length];
+        char [] returnArr =new char[endIndex-beginIndex];
+        int cnt = 0;
+        for (int i = beginIndex; i < endIndex; i++) {
 
-        for (int i = beginIndex; i <= endIndex; i++) {
-
-            newarr[i] =arr[i];
-            
+            newarr[cnt] =arr[i];
+            cnt++;
         }
-        return newarr;
+        for (int i = 0; i < endIndex-beginIndex; i++) {
+            
+                returnArr[i] =newarr[i];
+        }
+        return returnArr;
     }
 
      /** Returns a single integer that represents the given array. This integer is sometimes 
@@ -139,15 +144,21 @@ public class ArrCharOps {
      *  The hash value of an empty array is zero.
      */
     public static long hashCode(char[] arr) {
-       long temp = 0;
-        if(arr.length == 0)
-          return 0;
-        for (int i = 0; i < arr.length; i++) {
-            
-            temp +=arr[i]*(7^(arr.length-1));
-            
+        // Return 0 for an empty array
+       if (arr.length == 0) {
+        return 0;
         }
-        return temp;
+
+        int hash = 0;
+        int len = arr.length;
+        int pw = len - 1;
+
+        for (int i = 0; i < len; i++) {
+          hash += arr[i] * Math.pow(7, pw);
+         pw--; // Decrease the exponent for each next element
+    }
+
+    return hash;
     }
 
     /**
@@ -176,8 +187,11 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
-      int minLength = Math.min(str1.length(), str2.length());
-
+       int minLength = Math.min(str1.length(), str2.length());
+        if(minLength == 0)
+        {
+            return 3;
+        }
         for (int i = 0; i < minLength; i++) {
             int unicode1 = (int) str1.charAt(i); // Unicode value of character from str1
             int unicode2 = (int) str2.charAt(i); // Unicode value of character from str2
@@ -194,6 +208,10 @@ public class ArrCharOps {
             return -1;
         } else if (str1.length() > str2.length()) {
             return 1;
+        }
+
+        // If both strings are equal
+        return  0;
         }
 
         // If both strings are equal
