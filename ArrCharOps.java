@@ -212,7 +212,7 @@ public class ArrCharOps {
 
         // If both strings are equal
         return  0;
-        }
+        }}
 
         // If both strings are equal
         return  0;
