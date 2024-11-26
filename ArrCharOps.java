@@ -5,23 +5,25 @@ public class ArrCharOps {
         String str = "clearly";
         char[] arr1 = {'c','l','e','a','r','l','y'};
         char[] arr2 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
-        System.out.println(str);  // Prints the string
-        println(arr1);            // Prints an array of characters
-        System.out.println(charAt(arr1,2));      
-        System.out.println(indexOf(arr1,'l'));  
-        System.out.println(indexOf(arr1,'l',3)); 
-        System.out.println(lastIndexOf(arr1, 'l'));
-        System.out.println(concat(arr1, arr2));
-        System.out.println(subArray(arr2, 2, 9));
-        System.out.println(compareTo("abcd", "abcd"));
-        System.out.println(compareTo("abc", "abcd"));
-        System.out.println(compareTo("abw", "abcd"));
-        System.out.println(compareTo("Abcd", "a"));
-        System.out.println(compareTo("apple", "banana"));
-        System.out.println(compareTo("apple", "applepie"));
-        System.out.println(compareTo("Zoo", "zoo"));
-        System.out.println(hashCode(arr1));
-        System.out.println(hashCode(arr2));
+        char[] arr3 = "Somebody stop me".toCharArray();
+
+     //   System.out.println(str);  // Prints the string
+    //    println(arr1);            // Prints an array of characters
+     //   System.out.println(charAt(arr1,2));      
+     //   System.out.println(indexOf(arr1,'l'));  
+     //   System.out.println(indexOf(arr1,'l',3)); 
+      //  System.out.println(lastIndexOf(arr1, 'l'));
+      //  System.out.println(concat(arr1, arr2));
+     //   System.out.println(subArray(arr3, 9, 16));
+     //   System.out.println(compareTo("abcd", "abcd"));
+     //   System.out.println(compareTo("abc", "abcd"));
+     //   System.out.println(compareTo("abw", "abcd"));
+      //  System.out.println(compareTo("Abcd", "a"));
+      //  System.out.println(compareTo("apple", "banana"));
+      //  System.out.println(compareTo("apple", "applepie"));
+      //  System.out.println(compareTo("Zoo", "zoo"));
+      // System.out.println(hashCode(arr1));
+      //  System.out.println(hashCode(arr2));
     }
 
     /** Prints the given array of characters, and moves the cursor to the next line.
@@ -36,15 +38,16 @@ public class ArrCharOps {
     /** Returns the char value at the specified index. Assume that the array is non-empty.
      */
     public static char charAt(char[] arr, int index) {
-        return arr[index];
 
+        return arr[index];
     }
 
     /** If the two arrays have the same value in every index, 
      *  returns true; Otherwise returns false.
      */
     public static boolean equals(char[] arr1, char[] arr2) {
-         if(arr1.length != arr2.length)
+
+        if(arr1.length != arr2.length)
         {
             return false;
         }
@@ -57,13 +60,15 @@ public class ArrCharOps {
         }
         }
         return true;
+       
     }
 
     /** Returns the index within the given array of the first occurrence of the given character.
      *  If no such character is found, returns -1.
      */
     public static int indexOf(char[] arr, char ch) {
-         for (int i = 0; i < arr.length; i++) {
+
+        for (int i = 0; i < arr.length; i++) {
             
             if(arr[i] == ch)
             {
@@ -76,6 +81,7 @@ public class ArrCharOps {
     /** Same as indexOf(char[], char), but starts the search in the given index.
      */
     public static int indexOf(char[] arr, char ch, int fromIndex) {
+
         for (int i = fromIndex; i < arr.length; i++) {
             
             if(arr[i] == ch)
@@ -91,7 +97,8 @@ public class ArrCharOps {
      *  If no such character is found, returns -1.
      */
     public static int lastIndexOf(char[] arr, char ch) {
-       for (int i = arr.length-1; i >= 0; i--) {
+
+        for (int i = arr.length-1; i >= 0; i--) {
             
             if(arr[i] == ch)
             {
@@ -121,7 +128,8 @@ public class ArrCharOps {
      *  characters containing the characters "urge".
      */     
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
-         char [] newarr = new char[arr.length];
+
+        char [] newarr = new char[arr.length];
         char [] returnArr =new char[endIndex-beginIndex];
         int cnt = 0;
         for (int i = beginIndex; i < endIndex; i++) {
@@ -144,7 +152,8 @@ public class ArrCharOps {
      *  The hash value of an empty array is zero.
      */
     public static long hashCode(char[] arr) {
-        // Return 0 for an empty array
+
+       // Return 0 for an empty array
        if (arr.length == 0) {
         return 0;
         }
@@ -187,7 +196,7 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
-       int minLength = Math.min(str1.length(), str2.length());
+        int minLength = Math.min(str1.length(), str2.length());
         if(minLength == 0)
         {
             return 3;
@@ -209,10 +218,6 @@ public class ArrCharOps {
         } else if (str1.length() > str2.length()) {
             return 1;
         }
-
-        // If both strings are equal
-        return  0;
-        }}
 
         // If both strings are equal
         return  0;
