@@ -23,8 +23,10 @@ public class MyString {
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
-          int cnt = 0;
+       int cnt = 0;
         int checkcnt =0;
+        if(str2.length() == 0)
+            return true;
         for (int i = 0; i < str1.length(); i++) {
             cnt = i;
             if(str2.charAt(0) ==str1.charAt(i))
@@ -40,6 +42,10 @@ public class MyString {
                     return true;
                 else checkcnt=0;
             }
+
+
+        }
+        return false;
 
 
         }
