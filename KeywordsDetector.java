@@ -20,7 +20,6 @@ public class KeywordsDetector {
 
     // Iterates through all the sentences.
     // If a sentence contains one or more of the kewords, prints it.
-    public static void detectAndPrint(String[] sentences, String[] keywords) {
 public static void detectAndPrint(String[] sentences, String[] keywords) {
         for (String sentence : sentences) {
             // Check if the sentence contains any keyword
@@ -37,5 +36,5 @@ public static void detectAndPrint(String[] sentences, String[] keywords) {
             }
         }
     } }
-    }
-}
+    
+
