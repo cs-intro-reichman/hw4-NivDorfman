@@ -30,6 +30,6 @@ public class Primes {
             }
         
         }
-        System.err.println("There are " + cnt + " primes between 2 and " + len +  " (" + (100*cnt)/len + "% are primes)");
+        System.out.println("There are " + cnt + " primes between 2 and " + len +  " (" + (100*cnt)/len + "% are primes)");
     }
 }
